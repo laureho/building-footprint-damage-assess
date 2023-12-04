@@ -1,6 +1,6 @@
 # Building Footprint Detection and Damage Assessment from Satellite Images
 
-Quick attempt at generating building footprints of a selection of .jpeg images under `data/` according to instructions in `Task.md`
+Quick attempt at generating building footprints of a selection of .jpeg images under `data/` according to requirements listed in `Task.md`
 
 ## Provided data
 
@@ -51,6 +51,7 @@ conda env create -f environment.yml
 - Precision of building footprint prediction was notably better for `image_2` and `image_5` where there's a high prevalence of buildings with red/white roofs, but over-segmentation of roads and ground terrain was common
 - Prediction on original vs. sharpened images:
     - Severe problem of under-segmentation was observed when using the sharpened versions of `image_1`, `image_3`, `image_4`, when using the original versions certain building footprints were at least correctly segmented (in `image_1` & `image_3`) but over-segmentation of roads and barren fields was also prominent
+- Exported GeoJSON files and the visualizations of building footprints superimposed on the respective images can be found under `output/`
 
 - Suggestions for improvement:
     - Introduce data augmentations during training

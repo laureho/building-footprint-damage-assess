@@ -1,5 +1,8 @@
 .ipynb_checkpoints/
 checkpoints/
+version_0/
+version_1/
 *.npy
 *.npz
 *.pth
+building_footprint_damage.ipynb
