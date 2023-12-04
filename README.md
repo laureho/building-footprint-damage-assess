@@ -27,6 +27,7 @@ Quick attempt at generating building footprints of a selection of .jpeg images u
 - Imported the .jp(e)g images from `data/`
 - Because image quality is low (overall blur), used edge filter to sharpen, exported the processed images for later reuse
 
+
 1. Object Detection
 Notebook: obj_detection.ipynb - Run in Colab on T4 GPU
 - Tested 2 pre-trained models from the [MMRotate open-source toolbox](https://github.com/open-mmlab/mmrotate) for rotated object detection with mixed results; [the Rotation-equivariant Detector (ReDet)](https://github.com/open-mmlab/mmrotate/blob/main/configs/redet/README.md) showed marginally better object detection
@@ -41,10 +42,10 @@ git clone https://github.com/laureho/building-footprint-damage-assess.git
 cd building-footprint-damage-assess/
 conda env create -f environment.yml
 ```
-
 - Datased used: Inria Aerial Image Labeling (https://project.inria.fr/aerialimagelabeling/)
 - Model architecture: U-Net with Resnet50 backbone pre-trained on [ImageNetv2](https://pytorch.org/vision/stable/models.html)
-- Finetuned U-Net on Inria Aerial Image Labeling dataset for 100 epochs
+- Finetuned U-Net on Inria Aerial Image Labeling dataset for 100 epochs  
+
     pink = 1st session, yellow = 2nd session, resumed training of model from checkpoint of 1st
     ![training jaccard index curve](/images/unet_train_jaccard-plot.png)
     ![validation jaccard index curve](/images/unet_val_jaccard-plot)
@@ -67,6 +68,7 @@ conda env create -f environment.yml
     - Extract bounding box coordinates from each building mask
     - Crop out individual buildings
     - Generate same crops from pre-disaster images matching the provided .jp(e)g images
+
 
 3. Building Damage Assessment Plan
 - Download xBD dataset (https://xview2.org/dataset) & pre-trained baseline model provided by xView2 Challenge
